@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: webapp }
+  template:
+    metadata:
+      labels: { app: webapp }
+    spec:
+      containers:
+        - name: webapp
+          image: docker.io/rahul5553/webapp:latest
+          ports: [ { containerPort: 8080 } ]
+          resources:
+            requests: { cpu: "100m", memory: "128Mi" }
+            limits:   { cpu: "500m", memory: "512Mi" }

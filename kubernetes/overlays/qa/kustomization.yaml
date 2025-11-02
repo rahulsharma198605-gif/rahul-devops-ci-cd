@@ -1,0 +1,6 @@
+resources:
+  - ../../base
+namespace: qa
+images:
+  - name: docker.io/rahul5553/webapp
+    newTag: PLACEHOLDER_BY_JENKINS
